@@ -1,10 +1,9 @@
 import { mailService } from '../services/email.service.js';
 
 export default {
-    name: 'main-email',
+    name: 'email-app',
     template: `
     <div>
-    email goes here
     {{mails}}
     </div>
     `,

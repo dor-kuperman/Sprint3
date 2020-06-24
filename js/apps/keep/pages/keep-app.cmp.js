@@ -2,7 +2,7 @@ import { keepService } from '../services/keep.service.js';
 import noteList from '../cmps/note-list.cmp.js';
 
 export default {
-    name: 'main-keep',
+    name: 'keep-app',
     template: `
     <main class="keep-app">
     <note-list v-if="" :notes="notes"/>

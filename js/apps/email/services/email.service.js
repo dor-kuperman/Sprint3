@@ -16,5 +16,4 @@ var gMails = [
 
 function getMails() {
     return Promise.resolve(gMails);
-    console.log(gEMails);
 }
