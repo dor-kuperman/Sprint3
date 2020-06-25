@@ -1,5 +1,5 @@
 
-// export const NOTE_SELECTED = 'show-note'
+export const REMOVE_NOTE = 'removeNote'
 
 const bus = new Vue();
 
