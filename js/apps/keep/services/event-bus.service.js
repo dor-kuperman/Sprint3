@@ -1,5 +1,5 @@
 
-// export const EVENT_SET_NOTE = 'set-note'
+// export const NOTE_SELECTED = 'show-note'
 
 const bus = new Vue();
 

@@ -1,14 +1,15 @@
 export default {
     name: 'note-details',
+    props: ['currNote'],
     template: `
-<div v-for="(note, idx) in notes">
+<div>
     note details
-    <component :is="type"></component>
+    {{currNote}}
 </div>
     `,
-    data() {
-        return {
-            type: 'NoteText'
-        }
-    }
+    // data() {
+    //     return {
+    //         type: 'NoteText'
+    //     }
+    // }
 }
