@@ -1,5 +1,5 @@
 export default {
-    template: `
+  template: `
     <section>
     <nav>
       <router-link to="/">Homepage</router-link> | 
@@ -9,4 +9,4 @@ export default {
    </nav>   
    </section> 
     `,
-}
+};

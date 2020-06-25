@@ -1,6 +1,6 @@
 export default {
-  name: "note-details",
-  props: ["currNote"],
+  name: 'note-details',
+  props: ['currNote'],
   template: `
 <div>
     note details
