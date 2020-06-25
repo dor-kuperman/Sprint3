@@ -4,11 +4,11 @@ export default {
     name: 'note-preview',
     props: ['note'],
     template: `
-        <div class="note-preview">
+        <li class="note-preview">
         note preview
          {{note.type}}
         
-        </div>
+        </li>
        `,
    
 };
