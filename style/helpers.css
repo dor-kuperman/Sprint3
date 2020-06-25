@@ -65,3 +65,7 @@
 .column-layout >*:not(:last-child) {
     margin-bottom: 7.5px;
 }
+
+.bold-text{
+    font-weight: bold;
+}

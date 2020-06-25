@@ -1,6 +1,6 @@
 import homePage from './apps/home-page.cmp.js';
-import mainEmail from './apps/email/pages/main-email.cmp.js';
-import mainKeep from './apps/keep/pages/main-keep.cmp.js';
+import mainEmail from './apps/email/pages/email-app.cmp.js';
+import mainKeep from './apps/keep/pages/keep-app.cmp.js';
 import mainBooks from './apps/books/pages/main-books.cmp.js';
 
 // ?
