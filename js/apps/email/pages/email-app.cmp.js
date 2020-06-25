@@ -6,6 +6,7 @@ export default {
     name: 'email-app',
     template: `
     <main>
+    <button v-on:click="test">Delete the first email</button>
     <email-list :emails="emails" @emailSelected="setCurrEmail" v-if="!isReadMode"></email-list>
     <email-details v-else-if="isReadMode" :currEmail="currEmail">
     </email-details>
@@ -29,6 +30,10 @@ export default {
         setCurrEmail(email) {
             this.currEmail = email
             this.isReadMode = true
+            
+        },
+        test(){
+            this.emails.splice(0, 1)
             
         }
     },
