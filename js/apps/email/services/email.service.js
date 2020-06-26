@@ -44,12 +44,12 @@ function removeById(id) {
 
 function saveEmail(email) {
   if (email.id) {
-      const idx = gMails.findIndex(currmgMails => currmgMails.id === email.id)
-      gMails.splice(idx, 1, email)
+    const idx = gMails.findIndex(currmgMails => currmgMails.id === email.id)
+    gMails.splice(idx, 1, email)
   } else {
-      email.id = calcNextId();
-      email.sentAt = Date.now();
-      gMails.unshift(email);
+    email.id = calcNextId();
+    email.sentAt = Date.now();
+    gMails.unshift(email);
   }
   return Promise.resolve(email);
 }
@@ -71,5 +71,5 @@ function getEmailTemplate() {
 
 function calcNextId() {
   const currLastId = gMails[gMails.length - 1].id;
-  return currLastId;
-  }
+  return currLastId + 1;
+}
