@@ -1,9 +1,8 @@
 export default {
-  name: 'note-details',
+  name: 'note-edit',
   props: ['currNote'],
   template: `
 <div>
-    note details
     {{currNote}}
 </div>
     `,

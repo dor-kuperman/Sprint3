@@ -5,6 +5,7 @@ export const keepService = {
   removeById,
   getEmptyNote,
   getById,
+  saveNote,
 };
 
 var gNotes = [
@@ -45,22 +46,40 @@ function removeById(id) {
   gNotes.splice(idx, 1);
 }
 
-function getEmptyNote(type) {
+function getEmptyNote(type, inputVal) {
   var newNote;
   switch (type) {
     case 'noteText':
       newNote = {
-        id: Utils.getRandomId(),
+        id: '',
         type: 'noteText',
         isPinned: false,
-        info: { txt: '' },
+        info: { inputVal },
       };
       break;
     case 'noteImg':
-      // code block
+      newNote = {
+        id: '',
+        type: 'noteImg',
+        info: {
+          url: '',
+          title: '',
+        },
+        style: { backgroundColor: '#00d' },
+      };
       break;
     case 'noteTodos':
-      // code block
+      newNote = {
+        id: '',
+        type: 'noteTodos',
+        info: {
+          label: '',
+          todos: [
+            { txt: '', doneAt: null },
+            { txt: '', doneAt: null },
+          ],
+        },
+      };
       break;
     default:
     // code block
@@ -70,5 +89,17 @@ function getEmptyNote(type) {
 
 function getById(noteId) {
   const note = gNotes.find((note) => note.id === noteId);
+  return Promise.resolve(note);
+}
+
+function saveNote(note) {
+  if (note.id) {
+    const idx = gNotes.findIndex((currNote) => currNote.id === note.id);
+    gNotes.splice(idx, 1, note);
+  } else {
+    note.id = Utils.getRandomId();
+    note.createdAt = Date.now();
+    gNotes.unshift(note);
+  }
   return Promise.resolve(note);
 }

@@ -1,6 +1,6 @@
 import { keepService } from '../services/keep.service.js';
 import noteList from '../cmps/note-list.cmp.js';
-import noteDetails from '../cmps/note-details.cmp.js';
+import noteEdit from '../cmps/note-edit.cmp.js';
 import noteAdd from '../cmps/note-add.cmp.js';
 import {
   eventBus,
@@ -12,10 +12,10 @@ export default {
   name: 'keep-app',
   template: `
     <main class="keep-app">
-    <button @click="add">add</button> 
+
     <note-add/> 
-    <note-list @show-note="showNote" v-if="!noteSelected" :notes="notes"/>
-    <note-details v-else-if="noteSelected" :currNote="currNote"/>
+    <note-list @edit-note="editNote" :notes="notes"/>
+    <note-edit v-if="noteSelected" :currNote="currNote"/>
    
     </main>
     `,
@@ -37,16 +37,16 @@ export default {
   },
   components: {
     noteList,
-    noteDetails,
+    noteEdit,
     noteAdd,
   },
   methods: {
-    showNote(note) {
+    editNote(note) {
       this.noteSelected = true;
       this.currNote = note;
     },
-    add() {
-      eventBus.$emit(ADD_NOTE, 'noteText');
-    },
+    // add() {
+    //   eventBus.$emit(ADD_NOTE, 'noteText');
+    // },
   },
 };

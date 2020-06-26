@@ -1,6 +1,9 @@
 export default {
   name: 'note-text',
+  props: [],
   template: `
-   <input type="text" />
+  <section>
+    <input type="text" />
+  </section>
   `,
 };

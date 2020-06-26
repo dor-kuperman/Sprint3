@@ -6,12 +6,12 @@ export default {
   props: ['notes'],
   template: `
         <ul class="note-list">
-            <note-preview v-for="currNote in notes" :note="currNote" @click.native="selectNote(currNote)" :key="currNote.id"/>
+            <note-preview v-for="currNote in notes" :note="currNote" @mouseover.native="noteToEdit(currNote)" :key="currNote.id"/>
         </ul>
     `,
   methods: {
-    selectNote(note) {
-      this.$emit('show-note', note);
+    noteToEdit(note) {
+      this.$emit('edit-note', note);
     },
   },
   components: {

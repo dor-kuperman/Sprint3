@@ -10,6 +10,7 @@ export default {
         <li class="note-preview">
          <component :is="note.type"></component>
          <button @click.stop.prevent = "remove">remove</button>
+         
         </li>
        `,
   methods: {
