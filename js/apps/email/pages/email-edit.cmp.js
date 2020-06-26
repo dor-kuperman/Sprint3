@@ -29,10 +29,13 @@ export default {
             mailService.getById(+emailId)
                 .then(email => {
                     this.emailToEdit = { ...email };
+                    if (this.emailToEdit) {
+                        this.emailToEdit.subject = 'Re: ' + this.emailToEdit.subject
+                    }
                 })
             this.isNewEmail = false
-            
-            
+
+
         } else if (!emailId) {
             this.isNewEmail = true
         }
@@ -47,7 +50,7 @@ export default {
             mailService.saveEmail(this.emailToEdit)
                 .then(savedEmail => {
                     console.log('SAVED EMAIL: ', savedEmail);
-                    // this.$router.push('/car')
+                    this.$router.push('/email')
                 })
         }
     },
