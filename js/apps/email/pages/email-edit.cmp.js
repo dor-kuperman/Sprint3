@@ -1,11 +1,11 @@
 
-import {mailService} from '../services/email.service.js';
+import { mailService } from '../services/email.service.js';
 
-export default {    
+export default {
     template: `
     <section>
         <form @submit.prevent="saveEmail">
-            <h2>{{(!emailToEdit.id)? 'Edit' : 'Add'}} Email</h2>
+            <h2>{{(isNewEmail)? 'New' : 'Reply'}} Email</h2>
             Subject: <input type="text" v-model.trim="emailToEdit.subject"/>
             <br/>
             Content: <input type="text" v-model.trim="emailToEdit.body"/>
@@ -18,30 +18,39 @@ export default {
     `,
     data() {
         return {
-            emailToEdit: mailService.getEmailTemplate()        
+            emailToEdit: mailService.getEmailTemplate(),
+            isNewEmail: false
         }
     },
     created() {
         const emailId = this.$route.params.theEmailId;
-        
+
         if (emailId) {
             mailService.getById(+emailId)
-            .then(email => {
-                this.emailToEdit = {...email};
-            })
+                .then(email => {
+                    this.emailToEdit = { ...email };
+                    if (this.emailToEdit) {
+                        this.emailToEdit.subject = 'Re: ' + this.emailToEdit.subject
+                    }
+                })
+            this.isNewEmail = false
+
+
+        } else if (!emailId) {
+            this.isNewEmail = true
         }
     },
     computed: {
         isValid() {
             return (this.emailToEdit.subject && this.emailToEdit.body)
-        }
+        },
     },
     methods: {
         saveEmail() {
             mailService.saveEmail(this.emailToEdit)
                 .then(savedEmail => {
                     console.log('SAVED EMAIL: ', savedEmail);
-                    // this.$router.push('/car')
+                    this.$router.push('/email')
                 })
         }
     },

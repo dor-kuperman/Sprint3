@@ -3,7 +3,12 @@ export default {
     props: ['currEmail'],
     template: `
 <div>
+<button>
+<button>
 {{currEmail}}
 </div>
     `,
+    methods: {
+
+    }
 }
