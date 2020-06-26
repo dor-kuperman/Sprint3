@@ -1,12 +1,13 @@
 import { mailService } from '../services/email.service.js';
 import emailList from '../cmps/email-list.cmp.js';
 import emailDetails from '../cmps/email-details.cmp.js';
+import { eventBus, REMOVE_EMAIL } from "../services/event-bus.service.js";
 
 export default {
     name: 'email-app',
     template: `
     <main>
-    <button v-on:click="test">Delete the first email</button>
+    <router-link to="/email/edit">New Email</router-link>
     <email-list :emails="emails" @emailSelected="setCurrEmail" v-if="!isReadMode"></email-list>
     <email-details v-else-if="isReadMode" :currEmail="currEmail">
     </email-details>
@@ -21,21 +22,20 @@ export default {
         }
     },
     created() {
-            mailService.getMails()
-                .then(emails => {
-                    this.emails = emails;                    
-                })
+        mailService.getMails()
+            .then(emails => {
+                this.emails = emails;
+            }),
+            eventBus.$on(REMOVE_EMAIL, (id) => {
+                mailService.removeById(id)
+            });
     },
     methods: {
         setCurrEmail(email) {
             this.currEmail = email
             this.isReadMode = true
-            
+
         },
-        test(){
-            this.emails.splice(0, 1)
-            
-        }
     },
     computed: {
         emailsToShow() {
