@@ -14,22 +14,25 @@ var gMails = [
     subject: "First",
     body: "This is the first mail",
     isRead: false,
-    sentAt: Date.now(),
-    id: 101
+    sentAt: getFormattedTime(),
+    id: 101,
+    recipient: 'Rotem Yosef'
   },
   {
     subject: "Second",
     body: "This is the second mail, its true",
     isRead: true,
-    sentAt: Date.now(),
-    id: 102
+    sentAt: getFormattedTime(),
+    id: 102,
+    recipient: 'Dor Kuperman'
   },
   {
     subject: "Third",
     body: "This is the third mail",
     isRead: false,
-    sentAt: Date.now(),
-    id: 103
+    sentAt: getFormattedTime(),
+    id: 103,
+    recipient: 'Avivos'
   },
 ];
 
@@ -48,7 +51,7 @@ function saveEmail(email) {
     gMails.splice(idx, 1, email)
   } else {
     email.id = calcNextId();
-    email.sentAt = Date.now();
+    email.sentAt = getFormattedTime();
     gMails.unshift(email);
   }
   return Promise.resolve(email);
@@ -64,7 +67,7 @@ function getEmailTemplate() {
     subject: '',
     body: '',
     isRead: false,
-    sentAt: Date.now(),
+    sentAt: 0,
     id: 0
   };
 }
@@ -72,4 +75,18 @@ function getEmailTemplate() {
 function calcNextId() {
   const currLastId = gMails[gMails.length - 1].id;
   return currLastId + 1;
+}
+
+function getFormattedTime() {
+  var currDate = new Date();
+
+  var formatDate = '';
+  formatDate += currDate.getFullYear();
+  formatDate += '-0' + currDate.getMonth();
+  formatDate += '-' + currDate.getDate();
+  formatDate += ' ' + currDate.getHours();
+  formatDate += ':' + currDate.getMinutes();
+  console.log(currDate.toDateString());
+
+  return formatDate;
 }

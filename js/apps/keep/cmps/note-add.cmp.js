@@ -12,8 +12,6 @@ export default {
     <button :disabled="!isValid" @click="add('noteText')">add text</button>
     <button :disabled="!isValid" @click="add('noteImg')">add img</button>
     <button :disabled="!isValid" @click="add('noteTodos')">add todo</button>
-    <component v-if="isAdded" :is="type" ></component>
-    <span>new note: {{noteToEdit}}{{txt}}</span>
     </form>
 
     `,
@@ -22,15 +20,13 @@ export default {
     return {
       noteToEdit: null,
       txt: '',
-      isAdded: false,
       type: '',
     };
   },
   methods: {
     add(type) {
       this.noteToEdit = keepService.getEmptyNote(type, this.txt);
-      this.isAdded = true;
-      this.type = type;
+      // this.type = type;      
     },
     saveNote() {
       keepService.saveNote(this.noteToEdit).then((savedNote) => {

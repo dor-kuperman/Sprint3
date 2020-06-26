@@ -5,6 +5,7 @@ export default {
     props: ['emails'],
     template: `
     <ul class="email-list">
+    
             <email-preview v-for="email in emails" :email="email" @click.native="selectEmail(email)"/>
             </ul>
     `,

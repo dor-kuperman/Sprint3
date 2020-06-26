@@ -4,7 +4,8 @@ export const Utils = {
     storeToStorage,
     loadFromStorage,
     getRandomInt,
-    getRandomId
+    getRandomId,
+    getFormattedTime
 }
 
 function storeToStorage(key, value) {
@@ -28,3 +29,17 @@ function getRandomInt(num1, num2) {
     var min = (num1 <= num2)? num1 : num2;
     return (Math.floor(Math.random()*(max - min)) + min);
 }
+
+function getFormattedTime() {
+    var currDate = new Date();
+  
+    var formatDate = '';
+    formatDate += currDate.getFullYear();
+    formatDate += ' 0' + currDate.getMonth();
+    formatDate += ' ' + currDate.getDate();
+    formatDate += ' ' + currDate.getHours();
+    formatDate += ':' + currDate.getMinutes();
+    console.log(currDate.toDateString());
+  
+    return formatDate;
+  }

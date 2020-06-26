@@ -9,6 +9,7 @@ export default {
   template: `
         <li class="note-preview">
          <component :is="note.type"></component>
+         <button>edit</button>
          <button @click.stop.prevent = "remove">remove</button>
          
         </li>

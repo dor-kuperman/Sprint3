@@ -13,8 +13,8 @@ export default {
   template: `
     <main class="keep-app">
 
-    <note-add/> 
-    <note-list @edit-note="editNote" :notes="notes"/>
+    <note-add/>
+    <note-list v-if="!noteSelected" @edit-note="editNote" :notes="notes"/>
     <note-edit v-if="noteSelected" :currNote="currNote"/>
    
     </main>
@@ -44,6 +44,8 @@ export default {
     editNote(note) {
       this.noteSelected = true;
       this.currNote = note;
+      console.log(this.currNote);
+      
     },
     // add() {
     //   eventBus.$emit(ADD_NOTE, 'noteText');
