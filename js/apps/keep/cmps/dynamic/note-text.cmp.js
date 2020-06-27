@@ -1,9 +1,15 @@
 export default {
   name: 'note-text',
-  props: [],
+  props: ['note'],
   template: `
   <section>
-    <input type="text" />
+    <input type="text" v-model="val"/>
   </section>
   `,
+
+  data() {
+    return {
+      val: this.note.info.text,
+    };
+  },
 };

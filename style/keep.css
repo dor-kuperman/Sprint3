@@ -1,0 +1,17 @@
+/* .edit-note:hover {
+  display: block;
+} */
+
+.note-list {
+  list-style-type: none;
+}
+
+.note-preview {
+  background-color: rgb(173, 223, 252);
+  width: 20%;
+  height: 20%;
+}
+
+.add-note {
+  margin-block-end: 20px;
+}
