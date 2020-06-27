@@ -3,7 +3,7 @@ export default {
   props: ['currNote'],
   template: `
 <div>
-    {{currNote}}
+   <button>edit note</button>
 </div>
     `,
   // data() {

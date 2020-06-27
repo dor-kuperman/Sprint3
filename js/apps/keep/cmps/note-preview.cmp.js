@@ -2,6 +2,7 @@ import { eventBus, REMOVE_NOTE } from '../services/event-bus.service.js';
 import noteText from './dynamic/note-text.cmp.js';
 import noteTodos from './dynamic/note-todos.cmp.js';
 import noteImg from './dynamic/note-img.cmp.js';
+import noteEdit from '../cmps/note-edit.cmp.js';
 
 export default {
   name: 'note-preview',
@@ -22,5 +23,6 @@ export default {
     noteText,
     noteTodos,
     noteImg,
+    noteEdit,
   },
 };

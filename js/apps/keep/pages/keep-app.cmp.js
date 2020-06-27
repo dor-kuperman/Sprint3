@@ -1,6 +1,6 @@
 import { keepService } from '../services/keep.service.js';
 import noteList from '../cmps/note-list.cmp.js';
-import noteEdit from '../cmps/note-edit.cmp.js';
+// import noteEdit from '../cmps/note-edit.cmp.js';
 import noteAdd from '../cmps/note-add.cmp.js';
 import {
   eventBus,
@@ -15,7 +15,7 @@ export default {
 
     <note-add/> 
     <note-list @edit-note="editNote" :notes="notes"/>
-    <note-edit v-if="noteSelected" :currNote="currNote"/>
+    <!-- <note-edit v-if="noteSelected" :currNote="currNote"/> -->
    
     </main>
     `,
@@ -23,8 +23,8 @@ export default {
   data() {
     return {
       notes: [],
-      noteSelected: false,
-      currNote: null,
+      // noteSelected: false,
+      // currNote: null,
     };
   },
   created() {
@@ -37,16 +37,16 @@ export default {
   },
   components: {
     noteList,
-    noteEdit,
+    // noteEdit,
     noteAdd,
   },
-  methods: {
-    editNote(note) {
-      this.noteSelected = true;
-      this.currNote = note;
-    },
-    // add() {
-    //   eventBus.$emit(ADD_NOTE, 'noteText');
-    // },
-  },
+  // methods: {
+  //   editNote(note) {
+  //     this.noteSelected = true;
+  //     this.currNote = note;
+  //   },
+  // add() {
+  //   eventBus.$emit(ADD_NOTE, 'noteText');
+  // },
+  // },
 };
