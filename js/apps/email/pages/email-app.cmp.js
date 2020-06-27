@@ -7,7 +7,7 @@ export default {
     name: 'email-app',
     template: `
     <main>
-    <router-link to="/email/edit" v-if="!isReadMode">New Email</router-link>
+    <router-link to="/email/edit" v-if="!isReadMode" class="btn-compose">Compose</router-link>
     <email-list :emails="emails" @emailSelected="setCurrEmail" v-if="!isReadMode"></email-list>
     <email-details v-else-if="isReadMode" :currEmail="currEmail" @backToEmailList="backToEmailList">
     </email-details>
@@ -27,7 +27,10 @@ export default {
                 this.emails = emails;
             }),
             eventBus.$on(REMOVE_EMAIL, (id) => {
+                console.log(id);
+                
                 mailService.removeById(id)
+                return;
             });
     },
     methods: {

@@ -44,7 +44,6 @@ export default {
     editNote(note) {
       this.noteSelected = true;
       this.currNote = note;
-      console.log(this.currNote);
       
     },
     // add() {

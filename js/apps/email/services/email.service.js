@@ -42,7 +42,10 @@ function getMails() {
 
 function removeById(id) {
   const idx = gMails.findIndex(currEmail => currEmail.id === id)
+  console.log(idx);
+
   gMails.splice(idx, 1);
+  return;
 }
 
 function saveEmail(email) {
@@ -81,12 +84,11 @@ function getFormattedTime() {
   var currDate = new Date();
 
   var formatDate = '';
-  formatDate += currDate.getFullYear();
-  formatDate += '-0' + currDate.getMonth();
-  formatDate += '-' + currDate.getDate();
+  formatDate += currDate.getDate();
+  formatDate += '-' + currDate.getMonth();
+  formatDate += '-' + currDate.getFullYear();
   formatDate += ' ' + currDate.getHours();
   formatDate += ':' + currDate.getMinutes();
-  console.log(currDate.toDateString());
 
   return formatDate;
 }

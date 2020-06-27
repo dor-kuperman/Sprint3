@@ -8,14 +8,10 @@ new Vue({
     template: `
     <div>
         <header>
-        <h3>logo goes here</h3>
+        <div class="logo">AppSus</div>
             <nav-bar/>
         </header>
-        <main>
-        <h3>main content here
-        </h3>
         <router-view/>
-    </main>
     </div>
     `,
     components: {
