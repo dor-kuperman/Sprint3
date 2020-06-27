@@ -46,7 +46,7 @@ function removeById(id) {
   gNotes.splice(idx, 1);
 }
 
-function getEmptyNote(type, inputVal) {
+function getEmptyNote(type, inputTxt) {
   var newNote;
   switch (type) {
     case 'noteText':
@@ -54,7 +54,7 @@ function getEmptyNote(type, inputVal) {
         id: '',
         type: 'noteText',
         isPinned: false,
-        info: { inputVal },
+        info: { inputTxt },
       };
       break;
     case 'noteImg':

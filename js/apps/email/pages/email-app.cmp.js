@@ -7,9 +7,9 @@ export default {
     name: 'email-app',
     template: `
     <main>
-    <router-link to="/email/edit">New Email</router-link>
+    <router-link to="/email/edit" v-if="!isReadMode">New Email</router-link>
     <email-list :emails="emails" @emailSelected="setCurrEmail" v-if="!isReadMode"></email-list>
-    <email-details v-else-if="isReadMode" :currEmail="currEmail">
+    <email-details v-else-if="isReadMode" :currEmail="currEmail" @backToEmailList="backToEmailList">
     </email-details>
     </main>
     `,
@@ -34,7 +34,9 @@ export default {
         setCurrEmail(email) {
             this.currEmail = email
             this.isReadMode = true
-
+        },
+        backToEmailList() {
+            this.isReadMode = false;
         },
     },
     computed: {
