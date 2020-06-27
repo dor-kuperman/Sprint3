@@ -1,22 +1,14 @@
 import { keepService } from '../services/keep.service.js';
 import noteList from '../cmps/note-list.cmp.js';
-import noteEdit from '../cmps/note-edit.cmp.js';
 import noteAdd from '../cmps/note-add.cmp.js';
-import {
-  eventBus,
-  REMOVE_NOTE,
-  ADD_NOTE,
-} from '../services/event-bus.service.js';
+import { eventBus, REMOVE_NOTE } from '../services/event-bus.service.js';
 
 export default {
   name: 'keep-app',
   template: `
     <main class="keep-app">
-
-    <note-add/>
-    <note-list v-if="!noteSelected" @edit-note="editNote" :notes="notes"/>
-    <note-edit v-if="noteSelected" :currNote="currNote"/>
-   
+    <note-add/> 
+    <note-list @edit-note="editNote" :notes="notes" class="note-list clean-list flex wrap space-around"/>
     </main>
     `,
 
@@ -34,20 +26,22 @@ export default {
       eventBus.$on(REMOVE_NOTE, (id) => {
         keepService.removeById(id);
       });
+    // eventBus.$on(EDIT_NOTE, (id) => {
+    //   keepService.removeById(id);
+    // });
   },
   components: {
     noteList,
-    noteEdit,
     noteAdd,
   },
   methods: {
     editNote(note) {
       this.noteSelected = true;
       this.currNote = note;
+<<<<<<< HEAD
       
+=======
+>>>>>>> 400bd213b8775f09eb27fcccde60c8a8c7b48a70
     },
-    // add() {
-    //   eventBus.$emit(ADD_NOTE, 'noteText');
-    // },
   },
 };

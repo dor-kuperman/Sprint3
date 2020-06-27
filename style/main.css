@@ -1,5 +1,6 @@
 @import './helpers.css';
 @import './mail.css';
+<<<<<<< HEAD
 
 body{
     background-color: #92A8D1;
@@ -33,3 +34,6 @@ header nav{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 50px;
 }
+=======
+@import './keep.css';
+>>>>>>> 400bd213b8775f09eb27fcccde60c8a8c7b48a70
