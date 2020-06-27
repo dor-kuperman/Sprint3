@@ -38,10 +38,7 @@ export default {
     editNote(note) {
       this.noteSelected = true;
       this.currNote = note;
-<<<<<<< HEAD
       
-=======
->>>>>>> 400bd213b8775f09eb27fcccde60c8a8c7b48a70
     },
   },
 };
