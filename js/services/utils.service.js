@@ -25,20 +25,20 @@ function getRandomId() {
 }
 
 function getRandomInt(num1, num2) {
-    var max = (num1 >= num2)? num1+1 : num2+1;
-    var min = (num1 <= num2)? num1 : num2;
-    return (Math.floor(Math.random()*(max - min)) + min);
+    var max = (num1 >= num2) ? num1 + 1 : num2 + 1;
+    var min = (num1 <= num2) ? num1 : num2;
+    return (Math.floor(Math.random() * (max - min)) + min);
 }
 
 function getFormattedTime() {
     var currDate = new Date();
-  
+
     var formatDate = '';
     formatDate += currDate.getFullYear();
     formatDate += ' 0' + currDate.getMonth();
     formatDate += ' ' + currDate.getDate();
     formatDate += ' ' + currDate.getHours();
     formatDate += ':' + currDate.getMinutes();
-  
+
     return formatDate;
-  }
+}

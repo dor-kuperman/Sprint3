@@ -1,5 +1,6 @@
 "use strict";
 
+
 export const mailService = {
   getMails,
   removeById,
@@ -8,6 +9,18 @@ export const mailService = {
   getEmailTemplate,
   calcNextId
 };
+
+var prevId = 101;
+var currId = 0;
+
+function storeToStorage(key, value) {
+  localStorage.setItem(key, JSON.stringify(value) || null);
+}
+
+function loadFromStorage(key) {
+  let data = localStorage.getItem(key);
+  return (data) ? JSON.parse(data) : undefined;
+}
 
 var gMails = [
   {
@@ -36,15 +49,23 @@ var gMails = [
   },
 ];
 
+
 function getMails() {
-  return Promise.resolve(gMails);
+  var startingCounter = 0;
+  if (startingCounter === 0) {
+    console.log("hi!");
+    storeToStorage('emails', gMails)
+
+  }
+  startingCounter++;
+  return Promise.resolve(loadFromStorage('emails'));
 }
 
 function removeById(id) {
   const idx = gMails.findIndex(currEmail => currEmail.id === id)
-  console.log(idx);
 
   gMails.splice(idx, 1);
+  storeToStorage('emails', gMails)
   return;
 }
 
@@ -57,6 +78,7 @@ function saveEmail(email) {
     email.sentAt = getFormattedTime();
     gMails.unshift(email);
   }
+  storeToStorage('emails', gMails)
   return Promise.resolve(email);
 }
 
@@ -76,8 +98,9 @@ function getEmailTemplate() {
 }
 
 function calcNextId() {
-  const currLastId = gMails[gMails.length - 1].id;
-  return currLastId + 1;
+  currId = prevId
+  prevId++;
+  return currId;
 }
 
 function getFormattedTime() {

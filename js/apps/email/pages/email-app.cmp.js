@@ -9,7 +9,7 @@ export default {
     <main>
     <router-link to="/email/edit" v-if="!isReadMode" class="btn-compose">Compose</router-link>
     <email-list :emails="emails" @emailSelected="setCurrEmail" v-if="!isReadMode"></email-list>
-    <email-details v-else-if="isReadMode" :currEmail="currEmail" @backToEmailList="backToEmailList">
+    <email-details v-else-if="isReadMode" :email="currEmail" @backToEmailList="backToEmailList">
     </email-details>
     </main>
     `,
@@ -26,10 +26,13 @@ export default {
             .then(emails => {
                 this.emails = emails;
             }),
+
             eventBus.$on(REMOVE_EMAIL, (id) => {
-                console.log(id);
-                
                 mailService.removeById(id)
+                mailService.getMails()
+                    .then(emails => {
+                        this.emails = emails;
+                    })
                 return;
             });
     },

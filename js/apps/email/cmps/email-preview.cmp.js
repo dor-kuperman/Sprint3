@@ -4,7 +4,7 @@ export default {
   name: "email-preview",
   props: ["email"],
   template: `
-  <li class="email-border" :class="isRead">
+  <li class="email-border" :class="className">
     <span class="preview-subject">   {{email.subject}}</span>
     <span class="preview-recipient">  {{email.recipient}}</span>
     <span class="preview-body">  {{emailBodySlice}}</span>
@@ -13,10 +13,11 @@ export default {
   </li>
        `,
   computed: {
-    isRead() {
+    className() {
       if (!this.email.isRead) return "email-unread";
       else return "email-bgc"
     },
+    // if(this.email.body.lengtht )
   },
   methods: {
     remove() {
