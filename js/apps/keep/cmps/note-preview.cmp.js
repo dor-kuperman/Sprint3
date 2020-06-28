@@ -7,7 +7,7 @@ export default {
   name: 'note-preview',
   props: ['note'],
   template: `
-        <li class="note-preview" >
+        <li class="note-preview flex column space-between" >
          <component :is="note.type" :note="note" class="dynamic"></component>
          <note-edit :note="note" class="edit-note" />
         </li>

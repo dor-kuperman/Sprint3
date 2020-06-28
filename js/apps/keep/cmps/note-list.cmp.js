@@ -6,7 +6,7 @@ export default {
   props: ['notes'],
   template: `
         <ul class="note-list">
-            <note-preview v-for="currNote in notes" :note="currNote" :key="currNote.id"/>
+            <note-preview v-for="currNote in notes" :note="currNote" :key="currNote.id" class="note-preview"/>
         </ul>
     `,
   components: {

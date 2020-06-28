@@ -23,7 +23,7 @@ function _createDefaultNotes(){
       id: Utils.getRandomId(),
       type: 'noteText',
       isPinned: true,
-      info: { txt: 'Fullstack Me Baby!' },
+      info: { txt: 'We LoVue!' },
     },
     {
       id: Utils.getRandomId(),
@@ -38,12 +38,23 @@ function _createDefaultNotes(){
       id: Utils.getRandomId(),
       type: 'noteTodos',
       info: {
-        label: 'How was it:',
+        label: 'Daily tasks:',
         todos: [
-          { txt: 'Do that', doneAt: null },
-          { txt: 'Do this', doneAt: 187111111 },
+          { txt: 'Eat();', doneAt: null },
+          { txt: 'Sleep();', doneAt: null },
+          { txt: 'Code();', doneAt: null },
+          { txt: 'Repeat();', doneAt: null }
         ],
       },
+    },
+    {
+      id: Utils.getRandomId(),
+      type: 'noteImg',
+      info: {
+        url: '../img/pic2.jpg',
+        title: 'Me playing Mi',
+      },
+      style: { backgroundColor: '#00d' },
     },
   ];
 }

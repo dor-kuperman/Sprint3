@@ -4,9 +4,9 @@ export default {
   name: "note-todos",
   props: ["note"],
   template: `
-  <ul class="clean-list">
-  {{note.info.label}}
-  <li  v-for="currTodo in todos" :key="currTodo.id">{{currTodo.txt}}</li>
+  <ul class="todos clean-list">
+ <h3> {{note.info.label}}</h3>
+  <li  v-for="currTodo in todos" :key="currTodo.id" class="todo">{{currTodo.txt}}</li>
   </ul>
     `,
   data() {

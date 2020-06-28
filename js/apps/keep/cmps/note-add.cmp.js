@@ -6,13 +6,13 @@ import noteImg from './dynamic/note-img.cmp.js';
 export default {
   name: 'note-add',
   template: `
-    <form @submit.prevent="saveNote" class="add-note">
-    <input type="text" v-model="txt"/>
+    <form @submit.prevent="saveNote">
+    <input type="text" v-model="txt" placeholder="Add note" class="input-add"/>
     <button :disabled="!isValid" @click="add('noteText')" class="fas fa-font"></button>
-    <button :disabled="!isValid" @click="add('noteImg')">add img</button>
-    <button :disabled="!isValid" @click="add('noteTodos')">add todo</button>
+    <button :disabled="!isValid" @click="add('noteImg')" class="far fa-image"></button>
+    <button :disabled="!isValid" @click="add('noteTodos')" class="fas fa-list-ul"></button>
     </form>
-
+    
     `,
 
   data() {

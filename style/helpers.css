@@ -61,8 +61,3 @@
 .column-layout > *:not(:last-child) {
   margin-bottom: 7.5px;
 }
-
-button{
-  border: none;
-  background-color:rgb(255, 255, 255,0);
-}

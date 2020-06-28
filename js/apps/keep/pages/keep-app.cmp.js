@@ -6,9 +6,9 @@ import { eventBus, REMOVE_NOTE } from '../services/event-bus.service.js';
 export default {
   name: 'keep-app',
   template: `
-    <main class="keep-app">
-    <note-add/> 
-    <note-list :notes="notes" class="note-list clean-list flex wrap space-around"/>
+    <main class="keep-app flex align-center column">
+    <note-add class="add-note flex justify-center space-around"/> 
+    <note-list :notes="notes" class="note-list clean-list flex wrap space-around "/>
     </main>
     `,
 
