@@ -1,9 +1,17 @@
+// import noteEditCmp from "../note-edit.cmp";
+
 export default {
-  name: 'note-todos',
-  props: ['note'],
+  name: "note-todos",
+  props: ["note"],
   template: `
-  <section>
-    <span>{{note.info.label}}</span>
-  </section>
+  <ul class="clean-list">
+  {{note.info.label}}
+  <li  v-for="currTodo in todos" :key="currTodo.id">{{currTodo.txt}}</li>
+  </ul>
     `,
+  data() {
+    return {
+      todos: this.note.info.todos,
+    };
+  },
 };

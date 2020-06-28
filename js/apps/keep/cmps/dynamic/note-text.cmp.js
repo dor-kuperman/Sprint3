@@ -6,7 +6,7 @@ export default {
   template: `
   <section>
   <p>{{note.info.txt}}</p>
-    <input type="text" v-model="val"/>
+   
   </section>
   `,
 

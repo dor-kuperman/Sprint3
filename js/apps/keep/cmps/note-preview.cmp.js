@@ -8,8 +8,8 @@ export default {
   props: ['note'],
   template: `
         <li class="note-preview" >
-         <component :is="note.type" :note="note"></component>
-         <note-edit :note="note" />
+         <component :is="note.type" :note="note" class="dynamic"></component>
+         <note-edit :note="note" class="edit-note" />
         </li>
        `,
   // data() {

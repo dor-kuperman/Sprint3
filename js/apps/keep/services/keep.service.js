@@ -7,35 +7,46 @@ export const keepService = {
   getById,
   saveNote,
 };
+var gNotes = (() => {
+  var notes = Utils.loadFromStorage('notes');
+  if (!notes) {
+      notes = _createDefaultNotes();
+      Utils.storeToStorage('notes', notes);
+  }
+  return notes;
+})();
 
-var gNotes = [
-  {
-    id: 101,
-    type: 'noteText',
-    isPinned: true,
-    info: { txt: 'Fullstack Me Baby!' },
-  },
-  {
-    id: 102,
-    type: 'noteImg',
-    info: {
-      url: '../img/pic1.jpg',
-      title: 'Me playing Mi',
+function _createDefaultNotes(){
+
+  return [
+    {
+      id: Utils.getRandomId(),
+      type: 'noteText',
+      isPinned: true,
+      info: { txt: 'Fullstack Me Baby!' },
     },
-    style: { backgroundColor: '#00d' },
-  },
-  {
-    id: 103,
-    type: 'noteTodos',
-    info: {
-      label: 'How was it:',
-      todos: [
-        { txt: 'Do that', doneAt: null },
-        { txt: 'Do this', doneAt: 187111111 },
-      ],
+    {
+      id: Utils.getRandomId(),
+      type: 'noteImg',
+      info: {
+        url: '../img/pic1.jpg',
+        title: 'Me playing Mi',
+      },
+      style: { backgroundColor: '#00d' },
     },
-  },
-];
+    {
+      id: Utils.getRandomId(),
+      type: 'noteTodos',
+      info: {
+        label: 'How was it:',
+        todos: [
+          { txt: 'Do that', doneAt: null },
+          { txt: 'Do this', doneAt: 187111111 },
+        ],
+      },
+    },
+  ];
+}
 
 function getNotes() {
   return Promise.resolve(gNotes);
@@ -44,6 +55,7 @@ function getNotes() {
 function removeById(id) {
   const idx = gNotes.findIndex((currNote) => currNote.id === id);
   gNotes.splice(idx, 1);
+  Utils.storeToStorage('notes', gNotes)
 }
 
 function getEmptyNote(type, inputTxt) {
@@ -102,5 +114,7 @@ function saveNote(note) {
     note.createdAt = Date.now();
     gNotes.unshift(note);
   }
+  Utils.storeToStorage('notes', gNotes)
   return Promise.resolve(note);
 }
+

@@ -1,15 +1,21 @@
-/* .edit-note:hover {
+/* .edit-note{
+  display: none;
+}
+
+.edit-note:hover {
   display: block;
 } */
-
+img{
+  width: 20rem;
+  object-fit: cover;
+}
 .note-list {
   list-style-type: none;
 }
 
 .note-preview {
   background-color: rgb(173, 223, 252);
-  width: 20%;
-  height: 20%;
+  width: 20rem;
 }
 
 .add-note {
