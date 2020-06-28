@@ -1,46 +1,25 @@
-@font-face{
-  font-family: globalFont;
-  src: url(fonts/WorkSans-VariableFont_wght.ttf);
-}
-
-/* .bold-text {
-} */
-
-.email-unread{
-  font-weight: bold;
-    background-color: rgb(154, 191, 223);
-  }
-
-  .email-bgc{
-    background-color: lightblue;
+.bold-text {
+    font-weight: bold;
   }
   
-  .email-border{
-    border-color: black;
-    border: solid;
-    border-width: 1px;
-    margin-bottom: 2px;
-    border-radius: 60px;
-    padding: 13px;
-}
+  .email-unread{
+    background-color: rgb(218, 218, 218);
+    margin-bottom: 10px;
+  }
   
-.preview-subject{
+span.preview-subject{
+  margin: 20px;
   display: inline-block;
-  width: 15rem;
+  width: 215px
 }
-
 .preview-recipient{
   display: inline-block;
-  width: 15rem
-  }
-.preview-body{
-  display: inline-block;
-  width: 15rem
+  width: 215px
   }
 
 .preview-time{
   display: inline-block;
-  width: 15rem
+  width: 215px
   }
   
   .email-list{
@@ -48,16 +27,6 @@
   padding-left: 150px;
   }
 
-  .email-details{
-padding-left: 150px;
-  }
+  .edit-btn{
 
-  .btn-compose{
-    text-decoration: none;
-    background-color: #4C6A92;
-    border: none;
-  color: white;
-  padding: 15px 32px;
-border-radius: 20px;
-display: -webkit-inline-box;
   }

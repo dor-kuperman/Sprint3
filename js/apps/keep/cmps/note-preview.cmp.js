@@ -9,7 +9,7 @@ export default {
   template: `
         <li class="note-preview" >
          <component :is="note.type" :note="note"></component>
-         <note-edit :noteId="note.id" />
+         <note-edit :note="note" />
         </li>
        `,
   // data() {

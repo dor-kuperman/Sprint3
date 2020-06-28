@@ -8,7 +8,7 @@ export default {
   template: `
     <main class="keep-app">
     <note-add/> 
-    <note-list @edit-note="editNote" :notes="notes" class="note-list clean-list flex wrap space-around"/>
+    <note-list :notes="notes" class="note-list clean-list flex wrap space-around"/>
     </main>
     `,
 
@@ -34,11 +34,13 @@ export default {
     noteList,
     noteAdd,
   },
-  methods: {
-    editNote(note) {
-      this.noteSelected = true;
-      this.currNote = note;
-      
-    },
-  },
+  // methods: {
+
+  //   @edit-note="editNote"
+
+  //   editNote(note) {
+  //     this.noteSelected = true;
+  //     this.currNote = note;
+  //   },
+  // },
 };

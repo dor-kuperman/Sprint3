@@ -3,7 +3,7 @@ export default {
   props: ['note'],
   template: `
   <section>
-    <span>todos</span>
+    <span>{{note.info.label}}</span>
   </section>
     `,
 };

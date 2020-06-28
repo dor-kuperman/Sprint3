@@ -4,7 +4,7 @@ export default {
   template: `
   <section>
     <span>img</span>
-  <img :src="note.url" alt=""/>
+  <img :src="note.info.url" alt=""/>
   </section>
     `,
 };
