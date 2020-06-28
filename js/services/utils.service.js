@@ -39,10 +39,7 @@ function getFormattedTime() {
     formatDate += ' ' + currDate.getDate();
     formatDate += ' ' + currDate.getHours();
     formatDate += ':' + currDate.getMinutes();
-<<<<<<< HEAD
-=======
     console.log(currDate.toDateString());
->>>>>>> a6fd629... keep improving
   
     return formatDate;
   }

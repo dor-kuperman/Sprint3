@@ -19,11 +19,7 @@ var gNotes = [
     id: 102,
     type: 'noteImg',
     info: {
-<<<<<<< HEAD
-      url: 'http://some-img/me',
-=======
       url: '../img/pic1.jpg',
->>>>>>> a6fd629... keep improving
       title: 'Me playing Mi',
     },
     style: { backgroundColor: '#00d' },
@@ -58,12 +54,8 @@ function getEmptyNote(type, inputTxt) {
         id: '',
         type: 'noteText',
         isPinned: false,
-<<<<<<< HEAD
-        info: { inputTxt },
-=======
         info: { 
           txt: inputTxt },
->>>>>>> a6fd629... keep improving
       };
       break;
     case 'noteImg':
