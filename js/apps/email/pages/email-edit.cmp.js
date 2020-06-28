@@ -49,7 +49,6 @@ export default {
         saveEmail() {
             mailService.saveEmail(this.emailToEdit)
                 .then(savedEmail => {
-                    console.log('SAVED EMAIL: ', savedEmail);
                     this.$router.push('/email')
                 })
         }
