@@ -9,7 +9,11 @@ export default {
   template: `
         <li class="note-preview" >
          <component :is="note.type" :note="note"></component>
+<<<<<<< HEAD
          <note-edit :noteId="note.id" />
+=======
+         <note-edit :note="note" />
+>>>>>>> a6fd629... keep improving
         </li>
        `,
   // data() {

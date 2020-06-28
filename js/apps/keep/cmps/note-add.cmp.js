@@ -1,5 +1,4 @@
 import { keepService } from '../services/keep.service.js';
-import { eventBus, ADD_NOTE } from '../services/event-bus.service.js';
 import noteText from './dynamic/note-text.cmp.js';
 import noteTodos from './dynamic/note-todos.cmp.js';
 import noteImg from './dynamic/note-img.cmp.js';
@@ -18,17 +17,17 @@ export default {
 
   data() {
     return {
-      noteToEdit: null,
+      newNote: null,
       txt: '',
       type: '',
     };
   },
   methods: {
     add(type) {
-      this.noteToEdit = keepService.getEmptyNote(type, this.txt);
+      this.newNote = keepService.getEmptyNote(type, this.txt);
     },
     saveNote() {
-      keepService.saveNote(this.noteToEdit).then((savedNote) => {
+      keepService.saveNote(this.newNote).then((savedNote) => {
         console.log(savedNote);
       });
     },
@@ -47,7 +46,7 @@ export default {
   //   const noteId = this.note.id;
   //   if (noteId) {
   //     keepService.getById(noteId).then((note) => {
-  //       this.noteToEdit = { ...note };
+  //       this.newNote = { ...note };
   //     });
   //   }
   // },

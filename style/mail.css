@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face{
   font-family: globalFont;
   src: url(fonts/WorkSans-VariableFont_wght.ttf);
@@ -36,11 +37,34 @@
 .preview-body{
   display: inline-block;
   width: 15rem
+=======
+.bold-text {
+    font-weight: bold;
+  }
+  
+  .email-unread{
+    background-color: rgb(218, 218, 218);
+    margin-bottom: 10px;
+  }
+  
+span.preview-subject{
+  margin: 20px;
+  display: inline-block;
+  width: 215px
+}
+.preview-recipient{
+  display: inline-block;
+  width: 215px
+>>>>>>> a6fd629... keep improving
   }
 
 .preview-time{
   display: inline-block;
+<<<<<<< HEAD
   width: 15rem
+=======
+  width: 215px
+>>>>>>> a6fd629... keep improving
   }
   
   .email-list{
@@ -48,6 +72,7 @@
   padding-left: 150px;
   }
 
+<<<<<<< HEAD
   .email-details{
 padding-left: 150px;
   }
@@ -60,4 +85,8 @@ padding-left: 150px;
   padding: 15px 32px;
 border-radius: 20px;
 display: -webkit-inline-box;
+=======
+  .edit-btn{
+
+>>>>>>> a6fd629... keep improving
   }

@@ -1,5 +1,5 @@
 export const REMOVE_NOTE = 'removeNote';
-export const ADD_NOTE = 'addNote';
+export const EDIT_NOTE = 'editNote';
 
 const bus = new Vue();
 

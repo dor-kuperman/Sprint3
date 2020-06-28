@@ -8,7 +8,11 @@ export default {
   template: `
     <main class="keep-app">
     <note-add/> 
+<<<<<<< HEAD
     <note-list @edit-note="editNote" :notes="notes" class="note-list clean-list flex wrap space-around"/>
+=======
+    <note-list :notes="notes" class="note-list clean-list flex wrap space-around"/>
+>>>>>>> a6fd629... keep improving
     </main>
     `,
 
@@ -33,6 +37,7 @@ export default {
   components: {
     noteList,
     noteAdd,
+<<<<<<< HEAD
   },
   methods: {
     editNote(note) {
@@ -40,5 +45,16 @@ export default {
       this.currNote = note;
       
     },
+=======
+>>>>>>> a6fd629... keep improving
   },
+  // methods: {
+
+  //   @edit-note="editNote"
+
+  //   editNote(note) {
+  //     this.noteSelected = true;
+  //     this.currNote = note;
+  //   },
+  // },
 };
