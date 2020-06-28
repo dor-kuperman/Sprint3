@@ -63,14 +63,7 @@ function getMails() {
 
 function removeById(id) {
   const idx = gMails.findIndex(currEmail => currEmail.id === id)
-<<<<<<< HEAD
-
   gMails.splice(idx, 1);
-  storeToStorage('emails', gMails)
-  return;
-=======
-  gMails.splice(idx, 1);
->>>>>>> ba649625fcfc9387e2e5df46474acc9b6455a71d
 }
 
 function saveEmail(email) {

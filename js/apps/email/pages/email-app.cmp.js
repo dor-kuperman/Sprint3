@@ -29,14 +29,6 @@ export default {
 
             eventBus.$on(REMOVE_EMAIL, (id) => {
                 mailService.removeById(id)
-<<<<<<< HEAD
-                mailService.getMails()
-                    .then(emails => {
-                        this.emails = emails;
-                    })
-                return;
-=======
->>>>>>> ba649625fcfc9387e2e5df46474acc9b6455a71d
             });
     },
     methods: {

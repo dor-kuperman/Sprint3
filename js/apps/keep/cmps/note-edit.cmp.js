@@ -6,8 +6,8 @@ export default {
   props: ['note'],
   template: `
 <div>
-   <button @click.stop.prevent = "edit">edit</button>
-   <button @click.stop.prevent = "remove">remove</button>
+   <button @click.stop.prevent = "edit" class="fas fa-edit"></button>
+   <button @click.stop.prevent = "remove"  class="fas fa-trash-alt"></button>
 </div>
     `,
   methods: {
