@@ -8,7 +8,7 @@ export default {
   template: `
     <form @submit.prevent="saveNote" class="add-note">
     <input type="text" v-model="txt"/>
-    <button :disabled="!isValid" @click="add('noteText')">add text</button>
+    <button :disabled="!isValid" @click="add('noteText')" class="fas fa-font"></button>
     <button :disabled="!isValid" @click="add('noteImg')">add img</button>
     <button :disabled="!isValid" @click="add('noteTodos')">add todo</button>
     </form>
